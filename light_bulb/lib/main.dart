@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: "Smart Bulb",
+        title: "Smart Home",
         theme: ThemeData(
             visualDensity: VisualDensity.adaptivePlatformDensity,
             primaryColor: bPrimaryColor,

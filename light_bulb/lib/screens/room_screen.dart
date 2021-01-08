@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:light_bulb/constants.dart';
 import 'package:light_bulb/providers/device_list_provider.dart';
 import 'package:light_bulb/providers/room_list_provider.dart';
-import 'package:light_bulb/widgets/bar/bottom_bar.dart';
 import 'package:light_bulb/widgets/rooms/room_panel.dart';
 import 'package:provider/provider.dart';
 

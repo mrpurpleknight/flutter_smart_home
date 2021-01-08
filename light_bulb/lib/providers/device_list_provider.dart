@@ -33,5 +33,5 @@ class DeviceListProvider with ChangeNotifier {
   List<DeviceProvider> getDevicesFromRoomId(String roomId) {
     return all.where((element) => element.id == roomId).toList();
   }
-
 }
+

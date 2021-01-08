@@ -58,19 +58,21 @@ class _BrightnessSliderState extends State<BrightnessSlider> {
             value: _sliderValue.toDouble(),
             min: 0,
             max: 100,
-            onChanged: (double value) {
+            onChangeStart: (_) {
               setState(() {
-                _sliderValue = value.toInt();
+                reflect = false;
               });
             },
-            onChangeStart: (_) {
-              reflect = false;
+            onChanged: (double value) {
+              setState(() {
+                reflect = false;
+                _sliderValue = value.toInt();
+              });
+
+             device.setBrightness(value.toInt());
             },
             onChangeEnd: (value) {
-              Debouncing deb =
-                  Debouncing(duration: Duration(milliseconds: 1000));
-              deb.debounce(() {
-                device.setBrightness(value.toInt());
+              setState(() {
                 Future.delayed(Duration(milliseconds: 1500))
                     .then((value) => reflect = true);
               });
