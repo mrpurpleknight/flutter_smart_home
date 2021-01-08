@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:light_bulb/providers/room_provider.dart';
+import 'package:light_bulb/providers/room.dart';
 
 
-class RoomListProvider{
-  final List<RoomProvider> _rooms;
+class Rooms{
+  final List<Room> _rooms;
 
-  RoomListProvider(this._rooms);
+  Rooms(this._rooms);
 
-  List<RoomProvider> get rooms {
+  List<Room> get rooms {
     return _rooms;
   }
 
@@ -23,7 +23,7 @@ class RoomListProvider{
     return path;
   }
 
-  RoomProvider getRoomFromId(String id) {
+  Room getRoomFromId(String id) {
     return _rooms.firstWhere((element) => element.id == id);
   }
 

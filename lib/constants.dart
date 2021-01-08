@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'providers/device_provider.dart';
-import 'providers/room_provider.dart';
+import 'providers/device.dart';
+import 'providers/room.dart';
 
 const String lampUrl = 'http://192.168.1.5:3000/lamp';
 
@@ -42,47 +42,47 @@ const List<Map<String, Object>> bottomDrawerItems = [
 // -----------------------------------------
 
 // ---------------- Devices -----------------
-final List<DeviceProvider> gardenDevices = [
-  new DeviceProvider(
+final List<Device> gardenDevices = [
+  new Device(
     'd1',
     'Light Bulb',
     'Philips Hue 2',
     'r1',
     svgPath: 'assets/img/devices/lightbulb.svg',
   ),
-  new DeviceProvider('d9', 'Washing Machine', 'Whirlpool VF-54', 'r1',
+  new Device('d9', 'Washing Machine', 'Whirlpool VF-54', 'r1',
       svgPath: 'assets/img/devices/washer.svg'),
-  new DeviceProvider('d10', 'Smart TV', 'Samsung S24D391', 'r1',
+  new Device('d10', 'Smart TV', 'Samsung S24D391', 'r1',
       svgPath: 'assets/img/devices/tv.svg'),
 ];
-final List<DeviceProvider> bathroomDevices = [
-  new DeviceProvider('d2', 'Air Conditioner', 'Hitachi V2', 'r2',
+final List<Device> bathroomDevices = [
+  new Device('d2', 'Air Conditioner', 'Hitachi V2', 'r2',
       svgPath: 'assets/img/devices/conditioner.svg'),
-  new DeviceProvider('d3', 'Washing Machine', 'Whirlpool VF-54', 'r2',
+  new Device('d3', 'Washing Machine', 'Whirlpool VF-54', 'r2',
       svgPath: 'assets/img/devices/washer.svg')
 ];
-final List<DeviceProvider> kitchenDevices = [
-  new DeviceProvider('d4', 'Light Bulb', 'Philips Hue 2', 'r3',
+final List<Device> kitchenDevices = [
+  new Device('d4', 'Light Bulb', 'Philips Hue 2', 'r3',
       svgPath: 'assets/img/devices/lightbulb.svg'),
 ];
-final List<DeviceProvider> livingDevices = [
-  new DeviceProvider('d5', 'Light Bulb', 'Philips Hue 2', 'r4',
+final List<Device> livingDevices = [
+  new Device('d5', 'Light Bulb', 'Philips Hue 2', 'r4',
       svgPath: 'assets/img/devices/lightbulb.svg'),
-  new DeviceProvider('d6', 'Smart TV', 'Samsung S24D391', 'r4',
+  new Device('d6', 'Smart TV', 'Samsung S24D391', 'r4',
       svgPath: 'assets/img/devices/tv.svg'),
-  new DeviceProvider('d8', 'Air Conditioner', 'Hitachi V2', 'r6',
+  new Device('d8', 'Air Conditioner', 'Hitachi V2', 'r6',
       svgPath: 'assets/img/devices/conditioner.svg'),
 ];
-final List<DeviceProvider> diningDevices = [
-  new DeviceProvider('d7', 'Refrigerator', 'Whirlpool WR190', 'r5',
+final List<Device> diningDevices = [
+  new Device('d7', 'Refrigerator', 'Whirlpool WR190', 'r5',
       svgPath: 'assets/img/devices/refrigerator.svg')
 ];
-final List<DeviceProvider> officeDevices = [
-  new DeviceProvider('d11', 'Air Conditioner', 'Hitachi V2', 'r6',
+final List<Device> officeDevices = [
+  new Device('d11', 'Air Conditioner', 'Hitachi V2', 'r6',
       svgPath: 'assets/img/devices/conditioner.svg'),
 ];
 
-final List<DeviceProvider> allDevices = [
+final List<Device> allDevices = [
   ...gardenDevices,
   ...bathroomDevices,
   ...kitchenDevices,
@@ -93,18 +93,18 @@ final List<DeviceProvider> allDevices = [
 // ------------------------------------------
 
 // ---------------- RoomProviders ------------------
-final List<RoomProvider> rooms = [
-  new RoomProvider('r1', 'Garden', gardenDevices,
+final List<Room> rooms = [
+  new Room('r1', 'Garden', gardenDevices,
       svgPath: 'assets/img/rooms/garden.svg'),
-  new RoomProvider('r2', 'Bathroom', bathroomDevices,
+  new Room('r2', 'Bathroom', bathroomDevices,
       svgPath: 'assets/img/rooms/bath.svg'),
-  new RoomProvider('r3', 'Kitchen', kitchenDevices,
+  new Room('r3', 'Kitchen', kitchenDevices,
       svgPath: 'assets/img/rooms/kitchen.svg'),
-  new RoomProvider('r4', 'Living Room', livingDevices,
+  new Room('r4', 'Living Room', livingDevices,
       svgPath: 'assets/img/rooms/living.svg'),
-  new RoomProvider('r5', 'Dining Room', diningDevices,
+  new Room('r5', 'Dining Room', diningDevices,
       svgPath: 'assets/img/rooms/dining.svg'),
-  new RoomProvider('r6', 'Office', officeDevices,
+  new Room('r6', 'Office', officeDevices,
       svgPath: 'assets/img/rooms/office.svg'),
 ];
 

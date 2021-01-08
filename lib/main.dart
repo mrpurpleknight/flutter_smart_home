@@ -1,8 +1,8 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:light_bulb/providers/device_list_provider.dart';
-import 'package:light_bulb/providers/room_list_provider.dart';
+import 'package:light_bulb/providers/devices.dart';
+import 'package:light_bulb/providers/rooms.dart';
 import 'package:light_bulb/screens/main_screen.dart';
 import 'package:light_bulb/screens/room_screen.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (_) => DeviceListProvider(
+          create: (_) => Devices(
             gardenDevices: gardenDevices,
             bathroomDevices: bathroomDevices,
             diningDevices: diningDevices,
@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         Provider(
-          create: (_) => RoomListProvider(rooms),
+          create: (_) => Rooms(rooms),
         ),
       ],
       child: MaterialApp(

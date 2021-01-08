@@ -7,7 +7,7 @@ import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
 import 'package:light_bulb/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:light_bulb/providers/device_provider.dart';
+import 'package:light_bulb/providers/device.dart';
 import 'package:light_bulb/providers/status.dart';
 import 'package:light_bulb/widgets/devices/device_switch.dart';
 import 'package:provider/provider.dart';
@@ -32,7 +32,7 @@ class _DeviceTileState extends State<DeviceTile> {
   void initState() {
     super.initState();
     Future.delayed(Duration.zero).then((value) {
-      var device = Provider.of<DeviceProvider>(context, listen: false);
+      var device = Provider.of<Device>(context, listen: false);
       if (device.id != 'd1') {
         setState(() {
           offline = true;
@@ -41,8 +41,7 @@ class _DeviceTileState extends State<DeviceTile> {
 
       _subscription = device.stream.listen((Status status) {
         setState(() {
-          _status = status.on;
-          Future.delayed(Duration(seconds: 2)).then((value) => loading = false);
+          handleChange(status);
         });
       });
     });
@@ -57,15 +56,13 @@ class _DeviceTileState extends State<DeviceTile> {
   void handleChange(Status status) {
     setState(() {
       _status = status.on;
-    });
-    setState(() {
       Future.delayed(Duration(seconds: 3)).then((value) => loading = false);
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final device = Provider.of<DeviceProvider>(context);
+    final device = Provider.of<Device>(context);
     return LayoutBuilder(builder: (context, constraints) {
       return Container(
           margin: EdgeInsets.symmetric(
@@ -148,7 +145,8 @@ class _DeviceTileState extends State<DeviceTile> {
                                       dragStartBehavior: DragStartBehavior.down,
                                       onChanged: (value) {
                                         Throttling thr = Throttling(
-                                            duration: Duration(milliseconds: 1000));
+                                            duration:
+                                                Duration(milliseconds: 1000));
                                         thr.throttle(() {
                                           device.setStatus(value);
                                           setState(() {

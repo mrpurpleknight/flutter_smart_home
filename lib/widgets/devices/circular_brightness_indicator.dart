@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:light_bulb/providers/device_provider.dart';
+import 'package:light_bulb/providers/device.dart';
 import 'package:light_bulb/providers/status.dart';
 import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
@@ -18,7 +18,7 @@ class _CircularBrightnessIndicatorState extends State<CircularBrightnessIndicato
   @override
   void initState() {
     Future.delayed(Duration.zero).then((value) {
-      _subscription = Provider.of<DeviceProvider>(context, listen: false)
+      _subscription = Provider.of<Device>(context, listen: false)
           .stream
           .listen((Status status) {
         handleChange(status);

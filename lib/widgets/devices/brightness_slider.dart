@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:light_bulb/providers/device_provider.dart';
+import 'package:light_bulb/providers/device.dart';
 import 'package:light_bulb/providers/status.dart';
 import 'package:provider/provider.dart';
 import 'package:throttling/throttling.dart';
@@ -12,14 +12,14 @@ class BrightnessSlider extends StatefulWidget {
 }
 
 class _BrightnessSliderState extends State<BrightnessSlider> {
-  DeviceProvider device;
+  Device device;
   StreamSubscription _subscription;
   int _sliderValue = 0;
   bool reflect = true;
 
   @override
   void initState() {
-    device = Provider.of<DeviceProvider>(context, listen: false);
+    device = Provider.of<Device>(context, listen: false);
     Future.delayed(Duration.zero).then((value) {
       _subscription = device.stream.listen((Status status) {
         handleChange(status);
@@ -68,13 +68,13 @@ class _BrightnessSliderState extends State<BrightnessSlider> {
                 reflect = false;
                 _sliderValue = value.toInt();
               });
-
-             device.setBrightness(value.toInt());
             },
             onChangeEnd: (value) {
-              setState(() {
-                Future.delayed(Duration(milliseconds: 1500))
-                    .then((value) => reflect = true);
+              device.setBrightness(value.toInt());
+              Future.delayed(Duration(milliseconds: 1300)).then((value) {
+                setState(() {
+                  reflect = true;
+                });
               });
             },
             divisions: 2,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:light_bulb/providers/device_list_provider.dart';
-import 'package:light_bulb/providers/room_list_provider.dart';
+import 'package:light_bulb/providers/devices.dart';
+import 'package:light_bulb/providers/rooms.dart';
 import 'package:provider/provider.dart';
 
 import 'device_tile.dart';
@@ -8,8 +8,8 @@ import 'device_tile.dart';
 class DevicesGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final devicesProvider = Provider.of<DeviceListProvider>(context);
-    final roomsProvider = Provider.of<RoomListProvider>(context);
+    final devicesProvider = Provider.of<Devices>(context);
+    final roomsProvider = Provider.of<Rooms>(context);
     final devices = devicesProvider.all;
     return Padding(
       padding: const EdgeInsets.all(6),

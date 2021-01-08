@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:light_bulb/providers/device_provider.dart';
+import 'package:light_bulb/providers/device.dart';
 import 'package:light_bulb/widgets/devices/tab/device_tab.dart';
 
 class DevicesTabBar extends StatefulWidget {
   final TabController _tabController;
-  final List<DeviceProvider> devices;
+  final List<Device> devices;
 
   DevicesTabBar(this._tabController, this.devices);
 

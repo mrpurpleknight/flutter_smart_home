@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:light_bulb/providers/room_provider.dart';
+import 'package:light_bulb/providers/room.dart';
 import 'package:light_bulb/screens/room_screen.dart';
 import 'package:provider/provider.dart';
 
 class RoomTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final room = Provider.of<RoomProvider>(context);
+    final room = Provider.of<Room>(context);
     return LayoutBuilder(
       builder: (context, constraints) {
         return InkWell(

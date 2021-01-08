@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 import 'package:light_bulb/constants.dart';
-import 'package:light_bulb/providers/room_provider.dart';
+import 'package:light_bulb/providers/room.dart';
 import 'package:light_bulb/widgets/devices/function/function_tile.dart';
 import 'package:light_bulb/widgets/devices/tab/devices_tab_bar.dart';
 import 'package:light_bulb/widgets/devices/tab/empty_tab_view.dart';
@@ -10,7 +10,7 @@ import 'package:light_bulb/widgets/devices/tab/light_tab_view.dart';
 import 'package:provider/provider.dart';
 
 class RoomPanel extends StatefulWidget {
-  final RoomProvider room;
+  final Room room;
 
   RoomPanel(this.room);
 

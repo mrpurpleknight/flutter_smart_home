@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-import 'device_provider.dart';
+import 'device.dart';
 
-class DeviceListProvider with ChangeNotifier {
-  final List<DeviceProvider> gardenDevices;
-  final List<DeviceProvider> bathroomDevices;
-  final List<DeviceProvider> kitchenDevices;
-  final List<DeviceProvider> livingDevices;
-  final List<DeviceProvider> diningDevices;
-  final List<DeviceProvider> officeDevices;
+class Devices with ChangeNotifier {
+  final List<Device> gardenDevices;
+  final List<Device> bathroomDevices;
+  final List<Device> kitchenDevices;
+  final List<Device> livingDevices;
+  final List<Device> diningDevices;
+  final List<Device> officeDevices;
 
-  DeviceListProvider({
+  Devices({
     @required this.gardenDevices,
     @required this.bathroomDevices,
     @required this.kitchenDevices,
@@ -19,7 +19,7 @@ class DeviceListProvider with ChangeNotifier {
     @required this.officeDevices,
   });
 
-  List<DeviceProvider> get all {
+  List<Device> get all {
     return [
       ...gardenDevices,
       ...bathroomDevices,
@@ -30,7 +30,7 @@ class DeviceListProvider with ChangeNotifier {
     ];
   }
 
-  List<DeviceProvider> getDevicesFromRoomId(String roomId) {
+  List<Device> getDevicesFromRoomId(String roomId) {
     return all.where((element) => element.id == roomId).toList();
   }
 }

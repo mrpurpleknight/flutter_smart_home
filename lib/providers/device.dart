@@ -4,7 +4,7 @@ import 'package:light_bulb/providers/http_status.dart';
 
 import 'status.dart';
 
-class DeviceProvider with ChangeNotifier {
+class Device with ChangeNotifier {
   final String id;
   final String _name;
   final String _model;
@@ -13,7 +13,7 @@ class DeviceProvider with ChangeNotifier {
   final _controller = StreamController<Status>.broadcast();
   final HttpStatus _http;
 
-  DeviceProvider(
+  Device(
     this.id,
     this._name,
     this._model,
