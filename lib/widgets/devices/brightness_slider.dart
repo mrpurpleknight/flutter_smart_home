@@ -15,7 +15,8 @@ class _BrightnessSliderState extends State<BrightnessSlider> {
   Device device;
   StreamSubscription _subscription;
   int _sliderValue = 0;
-  bool reflect = true;
+  bool _reflect = true;
+  Debouncing _deb = Debouncing(duration: Duration(milliseconds: 200));
 
   @override
   void initState() {
@@ -25,7 +26,6 @@ class _BrightnessSliderState extends State<BrightnessSlider> {
         handleChange(status);
       });
     });
-
     super.initState();
   }
 
@@ -36,10 +36,22 @@ class _BrightnessSliderState extends State<BrightnessSlider> {
   }
 
   void handleChange(Status status) {
-    if (reflect)
+    if (_reflect)
       setState(() {
         _sliderValue = status.brightness;
       });
+  }
+
+  void makeRequest(int value) {
+    _deb.debounce(() {
+      device.setBrightness(value);
+    });
+  }
+
+  setReflect(bool state) {
+    setState(() {
+      _reflect = state;
+    });
   }
 
   @override
@@ -59,23 +71,16 @@ class _BrightnessSliderState extends State<BrightnessSlider> {
             min: 0,
             max: 100,
             onChangeStart: (_) {
-              setState(() {
-                reflect = false;
-              });
+              setReflect(false);
             },
             onChanged: (double value) {
               setState(() {
-                reflect = false;
                 _sliderValue = value.toInt();
               });
+              makeRequest(value.toInt());
             },
-            onChangeEnd: (value) {
-              device.setBrightness(value.toInt());
-              Future.delayed(Duration(milliseconds: 1000)).then((value) {
-                setState(() {
-                  reflect = true;
-                });
-              });
+            onChangeEnd: (_) {
+              setReflect(true);
             },
             divisions: 2,
             inactiveColor: Colors.black12,
