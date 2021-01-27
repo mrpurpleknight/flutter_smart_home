@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:light_bulb/providers/device.dart';
-import 'package:light_bulb/providers/status.dart';
+import 'package:light_bulb/services/status.dart';
 
 class DeviceTab extends StatefulWidget {
   final Device deviceProvider;

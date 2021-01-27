@@ -47,38 +47,37 @@ final List<Device> gardenDevices = [
     'd1',
     'Light Bulb',
     'Philips Hue 2',
-    'r1',
     svgPath: 'assets/img/devices/lightbulb.svg',
   ),
-  new Device('d9', 'Washing Machine', 'Whirlpool VF-54', 'r1',
+  new Device('d9', 'Washing Machine', 'Whirlpool VF-54',
       svgPath: 'assets/img/devices/washer.svg'),
-  new Device('d10', 'Smart TV', 'Samsung S24D391', 'r1',
+  new Device('d10', 'Smart TV', 'Samsung S24D391',
       svgPath: 'assets/img/devices/tv.svg'),
 ];
 final List<Device> bathroomDevices = [
-  new Device('d2', 'Air Conditioner', 'Hitachi V2', 'r2',
+  new Device('d2', 'Air Conditioner', 'Hitachi V2',
       svgPath: 'assets/img/devices/conditioner.svg'),
-  new Device('d3', 'Washing Machine', 'Whirlpool VF-54', 'r2',
+  new Device('d3', 'Washing Machine', 'Whirlpool VF-54',
       svgPath: 'assets/img/devices/washer.svg')
 ];
 final List<Device> kitchenDevices = [
-  new Device('d4', 'Light Bulb', 'Philips Hue 2', 'r3',
+  new Device('d4', 'Light Bulb', 'Philips Hue 2',
       svgPath: 'assets/img/devices/lightbulb.svg'),
 ];
 final List<Device> livingDevices = [
-  new Device('d5', 'Light Bulb', 'Philips Hue 2', 'r4',
+  new Device('d5', 'Light Bulb', 'Philips Hue 2',
       svgPath: 'assets/img/devices/lightbulb.svg'),
-  new Device('d6', 'Smart TV', 'Samsung S24D391', 'r4',
+  new Device('d6', 'Smart TV', 'Samsung S24D391',
       svgPath: 'assets/img/devices/tv.svg'),
-  new Device('d8', 'Air Conditioner', 'Hitachi V2', 'r6',
+  new Device('d8', 'Air Conditioner', 'Hitachi V2',
       svgPath: 'assets/img/devices/conditioner.svg'),
 ];
 final List<Device> diningDevices = [
-  new Device('d7', 'Refrigerator', 'Whirlpool WR190', 'r5',
+  new Device('d7', 'Refrigerator', 'Whirlpool WR190',
       svgPath: 'assets/img/devices/refrigerator.svg')
 ];
 final List<Device> officeDevices = [
-  new Device('d11', 'Air Conditioner', 'Hitachi V2', 'r6',
+  new Device('d11', 'Air Conditioner', 'Hitachi V2',
       svgPath: 'assets/img/devices/conditioner.svg'),
 ];
 

@@ -8,7 +8,7 @@ import 'package:flutter/rendering.dart';
 import 'package:light_bulb/constants.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:light_bulb/providers/device.dart';
-import 'package:light_bulb/providers/status.dart';
+import 'package:light_bulb/services/status.dart';
 import 'package:light_bulb/widgets/devices/device_switch.dart';
 import 'package:provider/provider.dart';
 import 'package:throttling/throttling.dart';

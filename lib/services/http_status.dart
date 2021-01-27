@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import '../constants.dart';
-import '../providers/status.dart';
+import 'status.dart';
 
 class HttpStatus {
   final http.Client client;

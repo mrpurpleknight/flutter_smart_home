@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:light_bulb/providers/device.dart';
-import 'package:light_bulb/providers/status.dart';
+import 'package:light_bulb/services/status.dart';
 import 'package:provider/provider.dart';
 
 class DeviceSwitch extends StatelessWidget {
