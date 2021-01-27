@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:light_bulb/providers/http_status.dart';
+import 'package:light_bulb/services/http_status.dart';
 
 import 'status.dart';
 

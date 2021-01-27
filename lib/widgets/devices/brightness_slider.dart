@@ -71,7 +71,7 @@ class _BrightnessSliderState extends State<BrightnessSlider> {
             },
             onChangeEnd: (value) {
               device.setBrightness(value.toInt());
-              Future.delayed(Duration(milliseconds: 1300)).then((value) {
+              Future.delayed(Duration(milliseconds: 1000)).then((value) {
                 setState(() {
                   reflect = true;
                 });
